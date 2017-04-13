@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+    <body>
+        <div id="playlist-container"></div>
+
+        <!-- Templates -->
+        <script type="text/template" id="playlist-song-template">
+            <li class="playlist-song-row">
+
+                <div class="song-name">
+                    <%= name %>
+                </div>
+
+                <div class="song-artist">
+                    by <%= artist %>
+                </div>
+
+            </li>
+        </script>
+        <script type="text/template" id="playlist-template">
+            <h2 class="playlist-name"><%= name %></h2>
+            <h4 class="playlist-by">Playlist by <span class="playlist-owner"><%= owner %></span></h4>
+            <ul class="song-container"></ul>
+        </script>
+
+        <script type="text/javascript" src="js/resources/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="js/resources/underscore.js"></script>
+        <script type="text/javascript" src="js/resources/backbone.js"></script>
+        <script type="text/javascript" src="js/playlistProject.js"></script>
+    </body>
+</html>
