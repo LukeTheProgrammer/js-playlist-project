@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
-    </head>
-    <body>
-        <div id="playlist-container"></div>
+	<head>
+		<meta charset="utf-8">
+		<title>SharpSpring - JS Playlist Project</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 text-center">
+					<img class="album-cover" src="img/album_cover.jpg">
+					<i class="fa fa-question-circle fa-2x" onclick="toggle_help();" aria-hidden="true"></i>
 
-        <!-- Templates -->
-        <script type="text/template" id="playlist-song-template">
-            <li class="playlist-song-row">
+				</div>
+				<div class="col-sm-9">
+					<div id="playlist-container"></div>
+				</div>
+			</div>
 
-                <div class="song-name">
-                    <%= name %>
-                </div>
+			<div class="row help-row hide-help">
+				<div class="col-sm-9 col-sm-offset-3">
+					<p>Hints:</p>
+					<p>To rename the playlist, click or tap on the name of the playlist, make your changes, and click anywhere else you like.</p>
+					<p>To reorder the playlist, grab one of the songs by the 3 bar icon on the right-hand side and drag it to where you want it.</p>
+				</div>
+			</div>
 
-                <div class="song-artist">
-                    by <%= artist %>
-                </div>
+		</div>
 
-            </li>
-        </script>
-        <script type="text/template" id="playlist-template">
-            <h2 class="playlist-name"><%= name %></h2>
-            <h4 class="playlist-by">Playlist by <span class="playlist-owner"><%= owner %></span></h4>
-            <ul class="song-container"></ul>
-        </script>
 
-        <script type="text/javascript" src="js/resources/jquery-1.11.2.js"></script>
-        <script type="text/javascript" src="js/resources/underscore.js"></script>
-        <script type="text/javascript" src="js/resources/backbone.js"></script>
-        <script type="text/javascript" src="js/playlistProject.js"></script>
-    </body>
+		<!-- Templates -->
+		<script type="text/template" id="playlist-song-template">
+			<div class="row playlist-song-row">
+				<div class="col-xs-1 song-el song-position"><%= order %></div>
+				<div class="col-xs-6 song-el song-name"><%= name %></div>
+				<div class="col-xs-4 song-el song-artist">by <%= artist %></div>
+				<div class="col-xs-1 song-el sort-handle clearfix">
+					<i class="fa fa-bars fa-2x pull-right" aria-hidden="true"></i>
+				</div>
+			</div>
+		</script>
+		<script type="text/template" id="playlist-template">
+			<h2 class="playlist-name" contenteditable="true"><%= name %> </h2>
+			<h4 class="playlist-by">Playlist by <span class="playlist-owner"><%= owner %></span></h4>
+			<ul class="song-container"></ul>
+		</script>
+
+		<script type="text/javascript" src="js/resources/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="js/resources/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/resources/underscore.js"></script>
+		<script type="text/javascript" src="js/resources/backbone.js"></script>
+		<script type="text/javascript" src="js/playlistProject.js"></script>
+		<script type="text/javascript">
+			function toggle_help(){
+				$(".help-row").toggleClass("hide-help");
+			}
+		</script>
+	</body>
 </html>
