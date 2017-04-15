@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>SharpSpring - JS Playlist Project</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
@@ -11,18 +12,18 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3 text-center">
+				<div class="col-md-3 col-sm-12 text-center">
 					<img class="album-cover" src="img/album_cover.jpg">
 					<i class="fa fa-question-circle fa-2x" onclick="toggle_help();" aria-hidden="true"></i>
 
 				</div>
-				<div class="col-sm-9">
+				<div class="col-md-9 col-sm-12">
 					<div id="playlist-container"></div>
 				</div>
 			</div>
 
 			<div class="row help-row hide-help">
-				<div class="col-sm-9 col-sm-offset-3">
+				<div class="col-md-9 col-md-offset-3 col-sm-12 col-sm-offset-0">
 					<p>Hints:</p>
 					<p>To rename the playlist, click or tap on the name of the playlist, make your changes, and click anywhere else you like.</p>
 					<p>To reorder the playlist, grab one of the songs by the 3 bar icon on the right-hand side and drag it to where you want it.</p>
@@ -35,11 +36,11 @@
 		<!-- Templates -->
 		<script type="text/template" id="playlist-song-template">
 			<div class="row playlist-song-row">
-				<div class="col-xs-1 song-el song-position"><%= order %></div>
-				<div class="col-xs-6 song-el song-name"><%= name %></div>
-				<div class="col-xs-4 song-el song-artist">by <%= artist %></div>
-				<div class="col-xs-1 song-el sort-handle clearfix">
-					<i class="fa fa-bars fa-2x pull-right" aria-hidden="true"></i>
+				<div class="col-sm-1 col-xs-1 song-el song-position"><%= order %></div>
+				<div class="col-sm-6 col-xs-5 song-el song-name"><%= name %></div>
+				<div class="col-sm-4 col-xs-4 song-el song-artist">by <%= artist %></div>
+				<div class="col-sm-1 col-xs-2 song-el sort-handle">
+					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 				</div>
 			</div>
 		</script>
@@ -51,6 +52,7 @@
 
 		<script type="text/javascript" src="js/resources/jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="js/resources/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/resources/jquery-ui-touch-punch.min.js"></script>
 		<script type="text/javascript" src="js/resources/underscore.js"></script>
 		<script type="text/javascript" src="js/resources/backbone.js"></script>
 		<script type="text/javascript" src="js/playlistProject.js"></script>
